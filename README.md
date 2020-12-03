@@ -1,4 +1,4 @@
-# AIVO Challenge
+# AIVO Re-Challenge
 
 **Disclaimer**: El actual proyecto se entrega sin conocimiento del setup del servidor donde se lo probará.
 Por lo tanto, se recomienda seguir los pasos a continuación detallados.
@@ -14,21 +14,22 @@ Pasos a seguir para instalar este repositorio
     ```
     git clone https://github.com/SirPaulO/aivochallenge.git
     ```
-2. Instalar dependencias mediante Composer.
+2. Establecer variables de entorno con las credenciales de Spotify, para lo que
+se provee un archivo .env.example
     ```
-    composer install
+    cp .env.example .env
     ```
-3. Ejecutar servidor de PHP dentro de la carpeta del proyecto.
+3. Instalar dependencias mediante Composer.
     ```
     cd aivochallenge
-    php -S localhost:8000
+    composer install
     ```
-4. Dirigirse a la siguiente URL, dónde ***<band-name>*** es el nombre de la banda a buscar.
+4. Ejecutar servidor de PHP dentro de la carpeta del proyecto.
+    ```
+    cd aivochallenge
+    php -S localhost:8000 -t public
+    ```
+5. Dirigirse a la siguiente URL, dónde ***<band-name>*** es el nombre de la banda a buscar.
     ```
     http://localhost:8000/api/v1/albums?q=<band-name>
     ```
-# Seguridad
-El presente proyecto incluye credenciales de una cuenta personal de spotify, por lo que dichas credenciales se
-invalidarán para el 31/12/2020.
-
- 
